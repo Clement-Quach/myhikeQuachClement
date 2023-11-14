@@ -1,6 +1,5 @@
 var hikeDocID = localStorage.getItem("hikeDocID");    //visible to all functions on this page
 
-
 function getHikeName(id) {
   db.collection("hikes")
     .doc(id)
@@ -10,6 +9,9 @@ function getHikeName(id) {
       document.getElementById("hikeName").innerHTML = hikeName;
     });
 }
+
+getHikeName(hikeDocID);
+
 // Add this JavaScript code to make stars clickable
 
 // Select all elements with the class name "star" and store them in the "stars" variable
@@ -26,6 +28,7 @@ stars.forEach((star, index) => {
         }
     });
 });
+
 function writeReview() {
   console.log("inside write review");
   let hikeTitle = document.getElementById("title").value;
@@ -76,4 +79,3 @@ function writeReview() {
       window.location.href = 'review.html';
   }
 }
-getHikeName(hikeDocID);

@@ -45,8 +45,7 @@ function saveUserInfo() {
         //b) update user's document in Firestore
         currentUser.update({
           name: userName,
-          school: userSchool,
-          city: userCity
+
       })
       .then(() => {
           console.log("Document successfully updated!");
